@@ -20,4 +20,4 @@ preconditions :java 1.8 and maven 3.8.5
 	linux script : runTestSuite.sh
 
 3. reports
-	the reports out put is on a directory named test-output and HTML report is named index.html, the XML report name is testng-results.xml
+	the reports out put is on a directory ~\target\surefire-reports\test-output and HTML report is named index.html, the XML report name is testng-results.xml
