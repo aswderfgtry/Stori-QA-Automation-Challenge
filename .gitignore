@@ -26,3 +26,33 @@ testfour.png
 .classpath
 .classpath
 .classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+test-output/bullet_point.png
+test-output/testng.css
+test-output/testng-results.xml
+test-output/testng-reports.js
+test-output/testng-reports.css
+test-output/skipped.png
+test-output/passed.png
+test-output/old/index.html
+test-output/old/Default suite/toc.html
+test-output/old/Default suite/testng.xml.html
+test-output/old/Default suite/reporter-output.html
+test-output/junitreports/TEST-stori.test.Tests.xml
+test-output/navigator-bullet.png
+test-output/old/Default suite/classes.html
+test-output/old/Default suite/Default test.properties
+test-output/old/Default suite/groups.html
+test-output/old/Default suite/index.html
+test-output/old/Default suite/main.html
+test-output/old/Default suite/methods-alphabetical.html
+test-output/old/Default suite/methods-not-run.html
+test-output/old/Default suite/methods.html
+test-output/collapseall.gif
+test-output/Default suite/Default test.html
+test-output/Default suite/Default test.xml
+test-output/emailable-report.html
+test-output/failed.png
+test-output/index.html
+test-output/jquery-1.7.1.min.js

@@ -13,13 +13,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.TestRunner;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -31,26 +33,19 @@ public class Tests {
 	WebDriver driver;
 	JavascriptExecutor js;
 	String mainWindow;
-	String second;
-	
-	@BeforeTest
-	public void setOutputDirectory(ITestContext context) {
-		   TestRunner runner = (TestRunner) context;
-		   String path=System.getProperty("user.dir");
-		   runner.setOutputDirectory(path+"/Reports");
-		}
-	
+	String second;	
 	
 	@BeforeTest
 	public void setUpTest(ITestContext testContext) {
 		WebDriverManager.firefoxdriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		driver = new FirefoxDriver();
+		//driver = new ChromeDriver();
 		js=(JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		driver.get("https://rahulshettyacademy.com/AutomationPractice");
-		
 	}
 	
 	@Test(priority=0)
@@ -95,7 +90,6 @@ public class Tests {
 			WebElement button = driver.findElement(By.id("opentab"));
 			button.click();
 			Set<String> handles=driver.getWindowHandles();
-			System.out.println(handles.toString());
 			handles.remove(mainWindow);
 			second = (String) handles.toArray()[0];
 			try {
@@ -122,6 +116,7 @@ public class Tests {
 			WebElement alert = driver.findElement(By.id("alertbtn"));
 			WebElement confirm = driver.findElement(By.id("confirmbtn"));
 			alert.click();
+			Reporter.log(driver.switchTo().alert().getText());
 			System.out.println(driver.switchTo().alert().getText());
 			try {
 				Thread.sleep(2000);
@@ -130,6 +125,7 @@ public class Tests {
 			textbox = driver.findElement(By.id("name"));
 			textbox.sendKeys("Stori Card");
 			confirm.click();
+			Reporter.log(driver.switchTo().alert().getText());
 			System.out.println(driver.switchTo().alert().getText());
 			String text =driver.switchTo().alert().getText();
 			Assert.assertEquals(text, "Hello Stori Card, Are you sure you want to confirm?");
@@ -145,6 +141,7 @@ public class Tests {
 			List<WebElement> elements =table.findElements(By.xpath("//td[contains(.,'25')]"));
 			for (WebElement element:elements) {  
 				WebElement temporal =driver.findElement(RelativeLocator.with(By.tagName("td")).toLeftOf(element));
+				Reporter.log(temporal.getText());
 				System.out.println(temporal.getText());
 			}
 		}
@@ -155,6 +152,7 @@ public class Tests {
 			List<WebElement> elements =table.findElements(By.xpath("//td[contains(.,'Engineer')]"));
 			for (WebElement element:elements) {  
 				WebElement temporal =driver.findElement(RelativeLocator.with(By.tagName("td")).toLeftOf(element));
+				Reporter.log(temporal.getText());
 				System.out.println(temporal.getText());
 			}
 		}
