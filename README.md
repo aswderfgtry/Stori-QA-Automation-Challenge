@@ -1,11 +1,11 @@
 preconditions :java 1.8 and maven 3.8.5
-1.instalation of preconditions
+1. installation of preconditions
 	install and add to environment variable jdk 1.8
 	variable name:JAVA_HOME
 	value:<instalation directory>\java\jre1.8.0_331 (e.g. : C:\Program Files\Java\jdk1.8.0_202)
 
 	download: https://www.oracle.com/mx/java/technologies/javase/javase8-archive-downloads.html
-	dependisn on SO version each installer works little different but at the end creates the same file tree
+	depending on SO version each installer works little different but at the end creates the same file tree
 
 
 	install and add to path environment variable maven 3.8.5
@@ -14,8 +14,8 @@ preconditions :java 1.8 and maven 3.8.5
 	variable name: path
 	value: <instalation directory>\apache-maven-3.8.5\bin (e.g. : ~;C:\Program Files\apache-maven-3.8.5\bin)
 
-2. runnig the test suit 
-	the scripts added to run the test suite is availibe for linux and windows version both scripts just need to be executed
+2. running the test suit 
+	the scripts added to run the test suite is available for linux and windows version both scripts just need to be executed
 	windows script : runTestSuite.bat
 	linux script : runTestSuite.sh
 
