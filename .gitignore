@@ -56,3 +56,33 @@ test-output/emailable-report.html
 test-output/failed.png
 test-output/index.html
 test-output/jquery-1.7.1.min.js
+Reports/bullet_point.png
+Reports/collapseall.gif
+Reports/emailable-report.html
+Reports/failed.png
+Reports/index.html
+Reports/jquery-1.7.1.min.js
+Reports/junitreports/TEST-stori.test.Tests.xml
+Reports/navigator-bullet.png
+Reports/old/index.html
+Reports/old/stori.test.Tests/Command line test.properties
+Reports/old/stori.test.Tests/classes.html
+Reports/old/stori.test.Tests/groups.html
+Reports/old/stori.test.Tests/index.html
+Reports/old/stori.test.Tests/main.html
+Reports/old/stori.test.Tests/methods-alphabetical.html
+Reports/old/stori.test.Tests/methods-not-run.html
+Reports/old/stori.test.Tests/methods.html
+Reports/old/stori.test.Tests/reporter-output.html
+Reports/old/stori.test.Tests/testng.xml.html
+Reports/old/stori.test.Tests/toc.html
+Reports/passed.png
+Reports/skipped.png
+Reports/stori.test.Tests.txt
+Reports/stori.test.Tests/Command line test.html
+Reports/stori.test.Tests/Command line test.xml
+Reports/TEST-stori.test.Tests.xml
+Reports/testng-reports.css
+Reports/testng-reports.js
+Reports/testng-results.xml
+Reports/testng.css

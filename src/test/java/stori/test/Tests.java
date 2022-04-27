@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -37,10 +38,20 @@ public class Tests {
 	
 	@BeforeTest
 	public void setUpTest(ITestContext testContext) {
-		WebDriverManager.firefoxdriver().setup();
-		//WebDriverManager.chromedriver().setup();
-		driver = new FirefoxDriver();
-		//driver = new ChromeDriver();
+		String browser = System.getProperty("browser");
+		if(browser!=null&&browser.contains("chrome")){
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+	    }else if(browser!=null&&browser.contains("firefox")){
+	    	WebDriverManager.firefoxdriver().setup();
+	        driver = new FirefoxDriver();
+	    }else if(browser!=null&&browser.contains("opera")){
+	    	WebDriverManager.operadriver().setup();
+	        driver = new OperaDriver();
+	    }else {
+	    	WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+	    }
 		js=(JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
@@ -48,7 +59,7 @@ public class Tests {
 		driver.get("https://rahulshettyacademy.com/AutomationPractice");
 	}
 	
-	@Test(priority=0)
+		@Test(priority=0)
 		public void testOne(ITestContext testContext) {
 			WebElement inputElement =driver.findElement(By.id("autocomplete"));
 			inputElement.sendKeys("me");

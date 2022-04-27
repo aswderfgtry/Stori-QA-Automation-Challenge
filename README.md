@@ -16,8 +16,10 @@ preconditions :java 1.8 and maven 3.8.5
 
 2. running the test suit 
 	the scripts added to run the test suite is available for linux and windows version both scripts just need to be executed
-	windows script : runTestSuite.bat
-	linux script : runTestSuite.sh
+	windows script : runTestSuite.bat  the default browser is configured as firefox
+	linux script : runTestSuite.sh the default browser is configured as firefox
+	
+	also there is tree different script for the tree browser supported to this test suite
 
 3. reports
-	the reports out put is on a directory ~\target\surefire-reports\test-output and HTML report is named index.html, the XML report name is testng-results.xml
+	the reports out put is on a directory Results and HTML report is named index.html, the XML report name is testng-results.xml
